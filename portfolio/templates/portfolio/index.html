@@ -127,29 +127,47 @@
         <div class="container">
             <h2 class="text-center mb-5">My Projects</h2>
             <div class="row">
-                {% for project in projects %}
+                <!-- Django Authentication System -->
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card project-card h-100">
-                        <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                        <img src="{% static 'portfolio/images/django-auth-system.jpg' %}" class="card-img-top" alt="Django Authentication System">
                         <div class="card-body">
-                            <h5 class="card-title">{{ project.title }}</h5>
-                            <p class="card-text">{{ project.description|linebreaks }}</p>
+                            <h5 class="card-title">Django Authentication System</h5>
+                            <p class="card-text">Secure user authentication with custom models, comprehensive testing, and modern UI<br><br>Built a complete authentication system featuring custom user models, secure login/logout flows, password reset functionality, and responsive dashboard. Includes 18 comprehensive tests and modern Bootstrap 5 interface.<br><br>Tech Stack: Django 5.2, Python 3.12, Bootstrap 5, SQLite.</p>
                         </div>
                         <div class="card-footer">
-                            {% if project.url %}
-                            <a href="{{ project.url }}" class="btn btn-primary" target="_blank">Live Demo</a>
-                            {% endif %}
-                            {% if project.github_url %}
-                            <a href="{{ project.github_url }}" class="btn btn-outline-secondary" target="_blank">GitHub</a>
-                            {% endif %}
+                            <a href="https://github.com/melo-b/django-auth-system" class="btn btn-outline-secondary" target="_blank">GitHub</a>
                         </div>
                     </div>
                 </div>
-                {% empty %}
-                <div class="col-12 text-center">
-                    <p class="lead">No projects available yet. Check back soon!</p>
+
+                <!-- Django Event Booking System -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="{% static 'portfolio/images/events-booking-app..jpg' %}" class="card-img-top" alt="Django Event Booking System">
+                        <div class="card-body">
+                            <h5 class="card-title">Django Event Booking System</h5>
+                            <p class="card-text">A robust event management platform built with Django, featuring user authentication, event CRUD operations, RSVP functionality, and real-time capacity management.<br><br>Tech Stack: Django 5.2, Python 3.12, SQLite, Django ORM.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/melo-b/event-booking-app" class="btn btn-outline-secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
                 </div>
-                {% endfor %}
+
+                <!-- Chess Tournament Management System -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card project-card h-100">
+                        <img src="{% static 'portfolio/images/chess-tournament-manager.jpg' %}" class="card-img-top" alt="Chess Tournament Management System">
+                        <div class="card-body">
+                            <h5 class="card-title">Chess Tournament Management System</h5>
+                            <p class="card-text">A comprehensive CLI chess tournament management application built with Python that handles complete tournament workflows from creation to final reporting. The system features automated Swiss-system pairings, player registration, match result tracking, and generates detailed tournament reports in both text and HTML formats.<br><br>Tech Stack: Python, JSON, Jinja2, flake8</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="https://github.com/melo-b/P3-Application-Developer-Skills-Bootcamp" class="btn btn-outline-secondary" target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
