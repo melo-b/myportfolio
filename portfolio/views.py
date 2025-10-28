@@ -24,6 +24,12 @@ def index(request):
                 # Get recipient email from environment variable
                 recipient_email = os.environ.get('CONTACT_TO_EMAIL', settings.DEFAULT_FROM_EMAIL)
                 
+                # Debug logging
+                print(f"DEBUG: Attempting to send email...")
+                print(f"DEBUG: From: {settings.DEFAULT_FROM_EMAIL}")
+                print(f"DEBUG: To: {recipient_email}")
+                print(f"DEBUG: Subject: New Contact Form Submission: {contact.subject}")
+                
                 send_mail(
                     f'New Contact Form Submission: {contact.subject}',
                     f'Name: {contact.name}\nEmail: {contact.email}\nSubject: {contact.subject}\nMessage: {contact.message}',
@@ -31,8 +37,10 @@ def index(request):
                     [recipient_email],  # To: Your personal email
                     fail_silently=False,
                 )
+                print(f"DEBUG: Email sent successfully!")
                 logger.info(f"Email sent successfully for contact: {contact.name} to {recipient_email}")
             except Exception as e:
+                print(f"DEBUG: Email sending failed: {str(e)}")
                 logger.error(f"Email sending failed: {str(e)}")
                 # Don't crash the form submission if email fails
             
