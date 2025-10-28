@@ -77,7 +77,8 @@ coverage.xml
 
 # Static files
 staticfiles/
-static/
+# Don't ignore source static files - we need them for deployment
+# static/
 
 # Media files
 media/
